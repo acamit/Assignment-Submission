@@ -1,0 +1,27 @@
+/*index page css*/
+.teacher , .student{
+	border:1px solid black;
+	display:inline-block;
+}
+/*index page css ends*/
+
+/***********************************************************************************************/
+
+/*student_login page css*/
+	.ui.form{
+	width : 35%;
+	margin-left: auto;
+	margin-right: auto;}
+/*student_login page css ends*/
+
+/***********************************************************************************************/
+
+/*submission page css*/
+form#submit{
+width:50%;
+margin-left:auto;
+margin-right:auto;
+}
+/*submission page css ends*/
+
+/***********************************************************************************************/
