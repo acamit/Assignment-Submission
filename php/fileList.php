@@ -7,7 +7,7 @@ if(isset($_GET['path']) && !empty($_GET['path'])){
 			if($file!='.' && $file!='..'){
 				
 				echo '<a href = "file.php?file='.$path.$file.'">'.$file.'</a><br/>';
-				//echo file_get_contents($path.$file);
+				
 			}
 		}
 	}

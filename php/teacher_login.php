@@ -1,6 +1,8 @@
 <?php
-	include '../include/core.inc.php';  
+	include '../include/core.inc.php'; 
+	include '../include/header.html';
 	require '../include/database.inc.php';
+	
 	$error = "";
 	if(isset($_POST['t_id']) && isset($_POST['password'])){
 		$t_id = strtoupper(htmlentities(mysql_real_escape_string(trim($_POST['t_id']))));
@@ -18,7 +20,7 @@
 					$_SESSION['t_id'] = $t_id;
 				 	$_SESSION['dept_id'] = $userDetails['dept_id'];
 					
-					header('Location: view.php');
+					header('Location: teacher_home.php');
 				}
 				else{
 					$error = "Invalid User Name and password";

@@ -1,4 +1,5 @@
 <?php
+	include 'include/header.html';
 	include 'include/core.inc.php';
 	session_destroy();
 ?>
