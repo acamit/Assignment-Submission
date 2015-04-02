@@ -30,7 +30,18 @@
 			if(mysql_num_rows($query_run) == 1){
 				if($new == $new1){
 					
-					$query = 'UPDATE '.$table.' SET `password` = '.$md5new.' WHERE '.$field.' = '.$id ;
+					$query = 'UPDATE '.$table.' SET `password` = \''.$md5new.'\' WHERE `'.$field.'` = \''.$id.'\'';
+					if($query_run = mysql_query($query)){
+						
+						if(mysql_affected_rows() == 1){
+							if($table == "students"){
+								header('Location: student_login.php');
+							}
+							else{
+								header('Location: teacher_login.php');
+							}
+						}
+					}
 				}
 				else{
 					$error = 'New Passwords Do Not Match.'; 

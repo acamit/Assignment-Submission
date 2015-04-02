@@ -3,6 +3,9 @@
 	include '../include/header.html';
 	require '../include/database.inc.php';
 	
+	if(teacher_login()){
+		header('Location: teacher_home.php');
+	}
 	$error = "";
 	if(isset($_POST['t_id']) && isset($_POST['password'])){
 		$t_id = strtoupper(htmlentities(mysql_real_escape_string(trim($_POST['t_id']))));

@@ -7,12 +7,14 @@
 		$id = $_SESSION['t_id'];
 ?>
 <html>
-
 	<div class="ui secondary  menu">
-  <a class="active item">
+  <a class="item" href="teacher_home.php">
+    <i class="home icon"></i>Home
+  </a>
+  <a class="item" href = "addNewAssignment.php">
     <i class="home icon"></i>Add New Assignment
   </a>
-  <a class="item" href="check_assignments.php">
+  <a class="active item" href="check_assignments.php">
     <i class="mail icon"></i> Check Assignments
   </a>
   <a class="item">
@@ -22,7 +24,7 @@
 	<a class="ui item">
     <?php echo $_SESSION['name']; ?> 
     </a>
-	<a class="ui item" href = "changePassword.php">
+	<a class="ui item" href="changePassword.php">
     Change Password
 	</a>
 	<a class="ui item" href="logout.php">
@@ -30,11 +32,7 @@
     </a>
   </div>
 </div>
-	
-	
-	
-	
-	
+		
 	
 	
 	
@@ -51,6 +49,9 @@
 	</div>
 </html>
 <?php
+	}
+	else{
+		header('Location: ../');
 	}
 
 ?>

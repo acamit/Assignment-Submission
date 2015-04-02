@@ -5,7 +5,7 @@
 	require '../include/database.inc.php';
 	if(student_login()){
 		$date = date('Y-m-d');
-	if(isset($_SESSION['rollno'])&&isset($_SESSION['name'])&& isset($_POST['department'])&&isset($_POST['class'])&&isset($_POST['semester'])&&isset($_POST['subjects'])&&isset($_POST['topic'])&&isset($_FILES['file']['name']) ){
+		if(isset($_SESSION['rollno'])&&isset($_SESSION['name'])&& isset($_POST['department'])&&isset($_POST['class'])&&isset($_POST['semester'])&&isset($_POST['subjects'])&&isset($_POST['topic'])&&isset($_FILES['file']['name']) ){
 			
 			
 			$name = $_FILES['file']['name'];
@@ -18,9 +18,7 @@
 			$semester = htmlentities($_POST['semester']);
 			$subject = htmlentities($_POST['subjects']);
 			$topic_id = mysql_real_escape_string(htmlentities($_POST['topic']));
-			
-			
-			
+					
 			/*check file type */
 			$query = "select `topic`, `filetype` , `filetype2` from topics where `topic_id` = '$topic_id'";
 			if($query_run = mysql_query($query)){
