@@ -60,9 +60,9 @@
 									$query = "INSERT INTO submissions(`id` , `topic_id` , `rollno` , `date` , `file`, `teacher_id`) values('$sid' , '$topic_id' , '$rollno' , '$date' , '$location' , '$teacher' )"; 
 									
 									if($query_run = mysql_query($query)){
-									
-									header('Location: thanks.php');
 									echo 'assignment successfully submitted.';
+									header('Location: student_home.php');
+									
 								}
 								else{
 									echo 'no submission';

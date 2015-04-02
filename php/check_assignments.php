@@ -1,9 +1,40 @@
-
 <?php
-
 	require '../include/database.inc.php';
 	require '../include/core.inc.php';
-	include '../include/header.html';
+	include '../include/header.html';?>
+<html>
+	<body>
+		
+	<div class="ui secondary  menu">
+  <a class="item" href="teacher_home.php">
+    <i class="home icon"></i>Home
+  </a>
+  <a class="item">
+    <i class="home icon"></i>Add New Assignment
+  </a>
+  <a class="active item" href="">
+    <i class="mail icon"></i> Check Assignments
+  </a>
+  <a class="item">
+    <i class="user icon"></i> Edit Assignment
+  </a>
+  <div class="right menu">
+	<a class="ui item">
+    <?php echo $_SESSION['name']; ?> 
+    </a>
+	<a class="ui item" href="">
+    Change Password
+	</a>
+	<a class="ui item" href="logout.php">
+      Logout
+    </a>
+  </div>
+</div>
+	
+	</body>
+</html>
+<?php
+
 	
 	if(teacher_login()){
 		
