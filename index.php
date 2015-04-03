@@ -1,30 +1,46 @@
 <?php
-	include 'include/header.html';
 	include 'include/core.inc.php';
 	session_destroy();
 ?>
 
 <html>
 	<head>
-		<script type = "text/javascript" src = "js/index.js"></script>
-		<link rel= "stylesheet" type = "text/css" href = "css/css.css" />
-		<link rel= "stylesheet" type = "text/css" href = "css/semantic.min.css" />
-		
+	
+	<head>
+		<link rel = "stylesheet" type = "text/css" href = "css/semantic/dist/semantic.min.css"/>
+		<link rel = "stylesheet" type = "text/css" href = "css/css.css"/>
 	</head>
 	<body class = "index">
+		
+		<div class = "header">
+			<h1 class = "ui black header">Department of Computer Science And Engineering</h1>
+			<h2 class ="ui green header">Assignment Submission Portal</h2>
+		</div>
+	
 		<div class="teacher">
 			<a href="php/teacher_login.php">
-						<img src = "user.jpg" class="teacher_image" name="teacher_image"/>
+			
+						<img src = "images/teacher.png" class="teacher_image" name="teacher_image"/>
 						<br/>
-						<label for="teacher_image">TEACHER</label>
+						<div class="ui animated button">
+			   <div class="visible content">Teacher Login </div>
+			   <div class="hidden content">
+				 <i class="right arrow icon"></i>
+			   </div>
+			</div>
 				</a>
 		</div>
-			<div class = "student">
-				<a href="php/student_login.php">
-					<img src = "user.jpg" class="stud_image" name="stud_image"/> <br/>
-					<label for="stud_image">STUDENT</label>
+		<div class = "student">
+			<a href="php/student_login.php">
+				<img src = "images/student.png" class="stud_image" name="stud_image"/><br/>
+				<div class="ui animated button">
+				   <div class="visible content">Student Login </div>
+				   <div class="hidden content">
+					 <i class="right arrow icon"></i>
+				   </div>
+				</div>
 			</a>
-			</div>
-		
+		</div>
+		<script type = "text/javascript" src = "js/index.js"></script>
 	</body>
 </html>

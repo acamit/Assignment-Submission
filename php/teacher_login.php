@@ -1,6 +1,5 @@
 <?php
 	include '../include/core.inc.php'; 
-	include '../include/header.html';
 	require '../include/database.inc.php';
 	
 	if(teacher_login()){
@@ -39,9 +38,18 @@
 ?>
 <html>
 	<head>
+	
+	<head>
+		<link rel = "stylesheet" type = "text/css" href = "../css/semantic/dist/semantic.min.css"/>
+		<link rel = "stylesheet" type = "text/css" href = "../css/css.css"/>
 	</head>
 	
 	<body>
+		<div class = "header">
+			<h1 class = "ui black header">Department of Computer Science And Engineering</h1>
+			<h2 class ="ui green header">Assignment Submission Portal</h2>
+		</div>
+	
 	
 	<form id="teacher_form" class="teacher_form ui fluid form segment" action = "teacher_login.php" method = "post" >
 		<span id ="teacher_form_error" class = "ui form error" ><?php if(!empty($error)){echo $error;}?>
