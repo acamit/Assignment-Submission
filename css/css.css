@@ -3,9 +3,51 @@
 /***********************************************************************************************/
 
 /*index page css*/
+body.index{
+background-color:rgba(0,128,128,0.6);
+
+}
+
 .teacher , .student{
-	border:1px solid black;
 	display:inline-block;
+}
+
+.index > div.header {
+background-color:rgba(255,255,255,0.8);
+margin-top:50px;;
+
+}
+
+.header > h1.ui.header {
+text-align:center;
+padding-top:50px;
+font-variant:small-caps;
+}
+
+.header > h2.ui.header {
+text-align:center;
+padding-top:20px;
+padding-bottom:40px;
+font-variant:small-caps;
+}
+div.teacher{
+margin-top:50px;
+margin-left:15%;
+}
+
+div.student{
+margin-top:50px;
+float:right;
+margin-right:15%;
+}
+
+div.ui.animated.button {
+height:50px;
+width:150px;
+border-radius:0px;
+padding-top:15px;
+margin-top:10px;
+margin-left:50px;
 }
 /*index page css ends*/
 

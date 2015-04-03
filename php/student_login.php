@@ -1,5 +1,4 @@
 <?php
-	include '../include/header.html';
 	include '../include/core.inc.php';  
 	require '../include/database.inc.php';
 	$error = "";
@@ -35,9 +34,17 @@
 ?>
 <html>
 	<head>
-	</head>
 	
+	<head>
+		<link rel = "stylesheet" type = "text/css" href = "../css/semantic/dist/semantic.min.css"/>
+		<link rel = "stylesheet" type = "text/css" href = "../css/css.css"/>
+	</head>
 	<body>
+		<div class = "header">
+			<h1 class = "ui black header">Department of Computer Science And Engineering</h1>
+			<h2 class ="ui green header">Assignment Submission Portal</h2>
+		</div>
+	
 	
 	<form id="student_form" class="student_form ui fluid form segment" action = "student_login.php" method = "post" >
 		<span id ="student_form_error" ><?php if(!empty($error)){echo $error;}?>

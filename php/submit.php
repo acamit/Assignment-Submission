@@ -1,6 +1,6 @@
 <?php
 
-	include '../include/header.html';
+	
 	include '../include/core.inc.php';
 	require '../include/database.inc.php';
 	if(student_login()){
@@ -92,24 +92,36 @@ else{
 
 <html>
 	<head>
+	
+	<head>
+		<link rel = "stylesheet" type = "text/css" href = "../css/semantic/dist/semantic.min.css"/>
+		<link rel = "stylesheet" type = "text/css" href = "../css/css.css"/>
 		<script src= "../js/submission.js" type = "text/javascript"></script>
 	</head>
+	
 	<body>
-		<form action = "submit.php" method = "post" enctype="multipart/form-data" name ="submit" id = "submit" >
+		<div class = "header">
+			<h1 class = "ui black header">Department of Computer Science And Engineering</h1>
+			<h2 class ="ui green header">Assignment Submission Portal</h2>
+		</div>
+		<form class = "ui form"action = "submit.php" method = "post" enctype="multipart/form-data" name ="submit" id = "submit" >
 		<fieldset>
-			<legend>assignment submission</legend>
-			<label for ="rollno">roll no :</label>
+			<legend>Assignment Submission</legend>
 			
-			<input type =  "text" name = "rollno" id = "rollno" maxlength =11 pattern = "\d\d\d\d\w\w\w\d\d\d\d" required="required" value="<?php echo $_SESSION['rollno']; ?>"/>
-			<span></span>
-			<br/><br/><br/>
+				<label for ="rollno">Roll no :</label>
+				<div class = "field">
+					<input type =  "text" name = "rollno" id = "rollno" maxlength =11 pattern = "\d\d\d\d\w\w\w\d\d\d\d" required="required" value="<?php echo $_SESSION['rollno']; ?>"/>
+				</div>
 			
 			
-			<label for="name">Name </label>: <input type =  "text" name = "name" id = "name" required="required" value="<?php echo $_SESSION['name']; ?>"/><span></span>
-			<br/><br/><br/>
-			
+			<label for="name">Name: </label>
+			<div class = "field">
+				<input type =  "text" name = "name" id = "name" required="required" value="<?php echo $_SESSION['name']; ?>"/>
+			</div>	
+		
+			<div class = "field">
 			<label for = "department">Department:</label>
-			<select id = "department" name = "department" required="required" >
+			<select class = "ui search dropdown" id = "department" name = "department" required="required" >
 			<?php
 				if(isset($_SESSION['dept_id'])){
 					$dept_id_s = $_SESSION['dept_id'];
@@ -133,10 +145,11 @@ else{
 				}
 			?>
 			</select>
-			<span></span>
-			<br/><br/><br/>
+			</div>
 			
-			<label for="class" > Class:</label><select id = "class" name = "class" required="required"><?php
+			<div class = "field">
+			<label for="class" > Class:</label>
+				<select id = "class" name = "class" required="required"><?php
 					if(isset($_SESSION['class_id'])){
 					$class_id = $_SESSION['class_id'];
 					$query = "SELECT `class` FROM classes WHERE `class_id` = '$class_id'";
@@ -152,47 +165,45 @@ else{
 			?>
 			
 			</select>
-			<span></span>
-			<br/><br/><br/>
+			</div>
+		
+			<div class = "field">
+				<label for = "semester">semester :</label>
+				<select class = "ui search dropdown" id = "semester" name = "semester" required="required">
+					<option value = "">Select Semester</option>			
+					<option value = "1">1</option>			
+					<option value = "2">2</option>			
+					<option value = "3">3</option>			
+					<option value = "4">4</option>			
+					<option value = "5">5</option>			
+					<option value = "6">6</option>			
+					<option value = "7">7</option>			
+					<option value = "8">8</option>			
+								
+				</select>
+			</div>
+			<div class = "field">
+				<label for = "subjects">subject :</label>
+				<select id = "subjects" name = "subjects" required = "required">
+				<option value ="">Select Subject</option>
+				</select>
+			</div>
 			
-			<label for = "semester">semester :</label>
-			<select id = "semester" name = "semester" required="required">
-				<option value = "">Select Semester</option>			
-				<option value = "1">1</option>			
-				<option value = "2">2</option>			
-				<option value = "3">3</option>			
-				<option value = "4">4</option>			
-				<option value = "5">5</option>			
-				<option value = "6">6</option>			
-				<option value = "7">7</option>			
-				<option value = "8">8</option>			
-				<option value = "8">9</option>			
-				<option value = "8">10</option>			
-							
-			</select>
-			<span></span>
-			<br/><br/><br/>
-			
-			<label for = "subjects">subject :</label>
-			<select id = "subjects" name = "subjects" required = "required">
-			<option value ="">Select Subject</option>
-			</select>
-			<span></span>
-			<br/>
-			<br/>
-			<br/>
-			
-			topic : <select id ="topic" name = "topic" required="required">
+			<div class = "field">
+			Topic : <select id ="topic" name = "topic" required="required">
 				<option value = "">Select Topic</option>			
 						
 			</select>
-			<span></span>
-			<br/>
-			<br/>
-			<br/>			
-			<input type = "file" name = "file" id = "file" required="required" />
-			<span></span>
-			<input type = "submit" value = "submit">
+			</div>
+			
+			<div class = "field">
+				<label>Upload Assignment:</label>
+				<input type = "file" name = "file" id = "file" required="required"  />
+			</div>
+			
+			<div class = "field">
+				<input class = "ui submit button" type = "submit" value = "submit">
+			</div>
 			</fieldset>
 		<form>
 		<a href="logout.php" >Log out</a>
