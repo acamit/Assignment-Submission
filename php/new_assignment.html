@@ -1,0 +1,112 @@
+<html>
+	<head>
+		<link rel = "stylesheet" type = "text/css" href = "../css/semantic/dist/semantic.min.css"/>
+		<link rel = "stylesheet" type = "text/css" href = "../css/css.css"/>
+	</head>
+	<body>
+		<div class = "header">
+			<h1 class = "ui black header">Department of Computer Science And Engineering</h1>
+			<h2 class ="ui green header">Assignment Submission Portal</h2>
+		</div>
+		
+		<form class = "ui form">
+			<fieldset>
+				<legend>Publish New Assignment</legend><br/>
+				<div class="field">
+					<label>Topic Name</label>
+					<input name="topic" placeholder="Topic" type="text">
+				</div>
+				 
+				<div class="field">
+					<label>Department </label>
+					<select class="ui search dropdown">
+						<option value="">Department</option>
+						<option value="CSE">Department of Computer Science And Engineering</option>
+						<option value="ECE">Department of Electronics Engineering </option>
+					</select>
+				</div>
+				
+				<div class="two fields">
+					<div class="field">
+						<label>Class</label>
+						<select class="ui search dropdown">
+						<option value = "">Select</option>
+						<option value = ""> </option>
+						<option value = ""> </option>
+						</select>
+					</div>
+					
+					<div class = "field">
+						<label>Section</label>
+						<select class="ui search dropdown">
+							<option value="">-</option>
+							<option value="">A</option>
+							<option value="">B</option>
+							<option value="">C</option>
+						</select>
+					</div>
+				</div>
+
+				<div class="two fields">
+					<div class="field">
+						<label>Semester</label>
+						<select class="ui search dropdown">
+							<option value="">Select</option>
+							<option value="">1</option>
+							<option value="">2</option>
+							<option value="">3</option>
+							<option value="">4</option>
+							<option value="">5</option>
+							<option value="">6</option>
+							<option value="">7</option>
+							<option value="">8</option>
+						</select>
+					</div>	
+				</div>
+				
+				<div class="field">
+					<label>Subject</label>
+					<input name="subject" placeholder="Subject" type="text">
+				</div>
+				
+				<label>Due Date</label>
+				<div class="three fields">
+					<div class = "field">
+						<input name="day" placeholder="dd" type="text" maxlength = "2" >
+					</div>
+					<div class = "field">
+						<input name="month" placeholder="mm" type="text" maxlength = "2">
+					</div>
+					<div class = "field">
+						<input name="year" placeholder="yyyy" type="number" maxlength = "4" value = "2015">
+					</div>
+				</div>
+				
+				
+				<label>Filetypes allowed :</label><br/>
+					<div class="inline field">
+					
+							   <input type="checkbox" name = "files">
+							   <label>.doc</label>
+							&nbsp;&nbsp;&nbsp;
+							
+							   <input type="checkbox" name = "files">
+							   <label>.docx</label>
+							&nbsp;&nbsp;&nbsp;
+						
+							   <input type="checkbox" name = "files">
+							   <label>.pdf</label>
+							&nbsp;&nbsp;&nbsp;
+							
+							   <input type="checkbox" name = "files">
+							   <label>.ppt</label>
+							&nbsp;&nbsp;&nbsp;
+					</div>
+				
+				<div class = "field" >
+					<input class = "ui button" type = "submit" value = "Upload Assignment"> 
+				</div>
+			</fieldset>
+		</form>
+	</body>
+</html>
