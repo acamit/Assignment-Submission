@@ -1,10 +1,8 @@
-window.addEventListener('load' , function(){
-	
-	
-	
-});
 
-function loadfiles (path){
+window.addEventListener('load' , function(){
+});
+	
+function loadfiles(path){
 		if(window.XMLHttpRequest){
 			xmlhttp = new XMLHttpRequest();
 		}
@@ -14,6 +12,7 @@ function loadfiles (path){
 		xmlhttp.onreadystatechange = function(){
 			if(xmlhttp.readyState==4 && xmlhttp.status ==200){
 				document.getElementById('div').innerHTML = xmlhttp.responseText;
+				
 			}
 		}
 		
@@ -21,4 +20,11 @@ function loadfiles (path){
 		xmlhttp.open('GET' , 'fileList.php?path='+path , true);
 		xmlhttp.send();
 	}
-	
+	$(document).ready(function(){
+
+		$(".column").click(function() {
+			$('.modal')	
+			.modal('show')
+			;
+		});
+	});

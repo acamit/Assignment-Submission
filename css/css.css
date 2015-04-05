@@ -71,3 +71,19 @@ margin-right:auto;
 /*submission page css ends*/
 
 /***********************************************************************************************/
+
+/* teacher_home page css */
+
+body > div#content{
+padding-left:15%;/*15% when 3 ,30% when 2*/ 
+
+}
+
+/* teacher_home page css ends*/
+
+body.check {
+
+font-variant:small-caps;
+}
+
+
