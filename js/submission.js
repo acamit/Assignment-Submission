@@ -5,18 +5,16 @@ window.addEventListener('load' , function(){
  var dept = document.getElementById('department');
  var clse = document.getElementById('class');
  var topic = document.getElementById('topic');
- var name = document.getElementById('rollno');
- var rollno = document.getElementById('name');
+ var name = document.getElementById('name');
+ var rollno = document.getElementById('rollno');
  
  if(!(name.value=="")){
 	 name.readOnly="true";
-	 //name.disabled="true";
+
  }
  if(!(rollno.value=="")){
-	 //rollno.disabled="true";
 	 rollno.readOnly = "true";
  }
-	
 	dept.addEventListener('change' , function(){
 		 var val = dept.options[dept.selectedIndex].value;
 		 op1="";
@@ -46,7 +44,7 @@ window.addEventListener('load' , function(){
 	
 });
 
- function fetch(element , id2 ,pid , op1 , op2){
+ function fetch(element , id2 ,pid , op1 , op2 , section){
 	 if(window.XMLHttpRequest){
 		 xmlhttp = new XMLHttpRequest();
 	 }
@@ -66,7 +64,7 @@ window.addEventListener('load' , function(){
 				 var option = document.createElement("option");
 				 option.value=cls_id[i];
 				 option.text=cls[i];
-				 option.id=cls[i];
+				 option.id=cls_id[i];
 				 element.appendChild(option);
 			 }
 		 }

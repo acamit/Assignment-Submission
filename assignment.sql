@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Apr 03, 2015 at 01:37 PM
+-- Generation Time: Apr 05, 2015 at 10:53 AM
 -- Server version: 5.6.21
 -- PHP Version: 5.6.3
 
@@ -72,21 +72,22 @@ CREATE TABLE IF NOT EXISTS `students` (
   `roll no` varchar(11) NOT NULL,
   `name` varchar(30) NOT NULL,
   `password` varchar(32) NOT NULL,
-  `class_id` varchar(8) NOT NULL
+  `class_id` varchar(8) NOT NULL,
+  `section` varchar(1) NOT NULL DEFAULT '0'
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `students`
 --
 
-INSERT INTO `students` (`roll no`, `name`, `password`, `class_id`) VALUES
-('2013CSA1001', 'AAKASH SINGH RATHORE', 'f84de1a6b06c34f8cc945d8acb67080c', 'BT101'),
-('2013csa1002', 'noname', 'a8342cd3c1489d89bc3148c22682b6cd', 'BA103'),
-('2013csa1003', 'aayush kohli', '4138f75dd0815108208a7304851ec995', 'BA102'),
-('2013CSA1020', 'AMIT CHAWLA', '7dd5a16fffc9d0c2de4756004d2d4025', 'BT102'),
-('2013CSA1021', 'AMIT MAHEY', 'cd14b7d83ddd017a3b283b8658b09a87', 'BA103'),
-('2013csa1051', 'mayank', '4ac28374a916df91024cf0a08b25671b', 'BT101'),
-('2013csa1062', 'himanshu gupta', 'fdd587d1b2d8c4e898971bb274242682', 'BT102');
+INSERT INTO `students` (`roll no`, `name`, `password`, `class_id`, `section`) VALUES
+('2013CSA1001', 'AAKASH SINGH RATHORE', 'f84de1a6b06c34f8cc945d8acb67080c', 'BT101', 'a'),
+('2013csa1002', 'noname', 'a8342cd3c1489d89bc3148c22682b6cd', 'BA103', 'a'),
+('2013csa1003', 'aayush kohli', '4138f75dd0815108208a7304851ec995', 'BA102', 'b'),
+('2013CSA1020', 'AMIT CHAWLA', '7dd5a16fffc9d0c2de4756004d2d4025', 'BT102', 'a'),
+('2013CSA1021', 'AMIT MAHEY', 'cd14b7d83ddd017a3b283b8658b09a87', 'BA103', 'b'),
+('2013csa1051', 'mayank', '4ac28374a916df91024cf0a08b25671b', 'BT101', 'b'),
+('2013csa1062', 'himanshu gupta', 'fdd587d1b2d8c4e898971bb274242682', 'BT102', 'c');
 
 -- --------------------------------------------------------
 
@@ -107,10 +108,11 @@ CREATE TABLE IF NOT EXISTS `subjects` (
 --
 
 INSERT INTO `subjects` (`sub_id`, `subject`, `teacher_id`, `class_id`, `semester`) VALUES
-('CSL240', 'Operating System', 'SKM', 'BT101', 2),
+('CSL240', 'Operating System', 'jsb', 'BT101', 2),
 ('CSL240', 'Operating System', 'jkm', 'BT104', 4),
-('ECL296', 'electrical', 'rjn', 'BT102', 1),
-('ENL201', 'communication skills', 'skm', 'BA103', 3);
+('ECL295', 'electronics', 'skm', 'BT102', 1),
+('ECL296', 'electrical', 'mpk', 'BT102', 1),
+('ENL201', 'communication skills', 'mpk', 'BA103', 3);
 
 -- --------------------------------------------------------
 
@@ -132,11 +134,12 @@ CREATE TABLE IF NOT EXISTS `submissions` (
 --
 
 INSERT INTO `submissions` (`id`, `topic_id`, `rollno`, `teacher_id`, `date`, `file`) VALUES
-('2013CSA1001csl_os', 'csl_os', '2013CSA1001', 'SKM', '2015-03-14', '../submissions/department of computer science and engineering/B.Tech/sem 2/CSL240/operating system/'),
-('2013csa1002enl_presen', 'enl_presen', '2013csa1002', 'skm', '2015-03-14', '../submissions/department of architecture/bachelor of architecture/sem 3/ENL201/skills of presentation/'),
-('2013CSA1020ecl_wires', 'ecl_wires', '2013CSA1020', 'rjn', '2015-03-13', '../submissions/department of electronics engineering/B.Tech/sem 1/ECL296/wires/'),
-('2013CSA1021enl_presen', 'enl_presen', '2013CSA1021', 'skm', '2015-03-14', '../submissions/department of architecture/bachelor of architecture/sem 3/ENL201/skills of presentation/'),
-('2013csa1051csl_os', 'csl_os', '2013csa1051', 'SKM', '2015-03-14', '../submissions/department of computer science and engineering/B.Tech/sem 2/CSL240/operating system/'),
+('2013CSA1001csl_os', 'csl_os', '2013CSA1001', 'mpk', '2015-03-14', '../submissions/department of computer science and engineering/B.Tech/sem 2/CSL240/operating system/'),
+('2013csa1002enl_presen', 'enl_presen', '2013csa1002', 'mpk', '2015-03-14', '../submissions/department of architecture/bachelor of architecture/sem 3/ENL201/skills of presentation/'),
+('2013csa1020102BT102EC', '102BT102EC', '2013csa1020', 'mpk', '2015-04-05', '../submissions/department of electronics engineering/B.Tech/sem 1/ECL296/section a/wires/'),
+('2013csa1020ecl_wires', 'ecl_wires', '2013csa1020', 'rjn', '2015-04-04', '../submissions/department of electronics engineering/B.Tech/sem 1/ECL296/wires/'),
+('2013CSA1021enl_presen', 'enl_presen', '2013CSA1021', 'mpk', '2015-03-14', '../submissions/department of architecture/bachelor of architecture/sem 3/ENL201/skills of presentation/'),
+('2013csa1051csl_os', 'csl_os', '2013csa1051', 'mpk', '2015-03-14', '../submissions/department of computer science and engineering/B.Tech/sem 2/CSL240/operating system/'),
 ('2013csa1062ecl_wires', 'ecl_wires', '2013csa1062', 'rjn', '2015-03-14', '../submissions/department of electronics engineering/B.Tech/sem 1/ECL296/wires/');
 
 -- --------------------------------------------------------
@@ -171,19 +174,19 @@ CREATE TABLE IF NOT EXISTS `topics` (
   `topic` varchar(30) NOT NULL,
   `sub_id` varchar(6) NOT NULL,
   `due_date` date NOT NULL,
-  `filetype` varchar(4) NOT NULL DEFAULT 'docx',
-  `filetype2` varchar(3) NOT NULL DEFAULT 'doc',
-  `class_id` varchar(8) NOT NULL
+  `filetype` varchar(40) NOT NULL DEFAULT 'docx',
+  `class_id` varchar(8) NOT NULL,
+  `section` varchar(1) NOT NULL DEFAULT '0'
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `topics`
 --
 
-INSERT INTO `topics` (`topic_id`, `topic`, `sub_id`, `due_date`, `filetype`, `filetype2`, `class_id`) VALUES
-('csl_os', 'operating system', 'CSL240', '2015-06-24', 'docx', 'doc', 'BT101'),
-('ecl_wires', 'wires', 'ECL296', '2015-03-20', 'docx', 'doc', 'BT102'),
-('enl_presen', 'skills of presentation', 'ENL201', '2015-05-15', 'docx', 'doc', 'BA103');
+INSERT INTO `topics` (`topic_id`, `topic`, `sub_id`, `due_date`, `filetype`, `class_id`, `section`) VALUES
+('102BT102EC', 'wires', 'ECL296', '2015-06-15', 'doc/docx', 'BT102', 'A'),
+('csl_os', 'operating system', 'CSL240', '2015-06-24', 'docx', 'BT101', '0'),
+('enl_presen', 'skills of presentation', 'ENL201', '2015-05-15', 'docx', 'BA103', 'a');
 
 --
 -- Indexes for dumped tables

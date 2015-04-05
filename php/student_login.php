@@ -9,7 +9,7 @@
 			
 			$password_hash = md5($password);
 			
-			$query = "SELECT `students`.`roll no` , `students`.`name` ,`students`.`class_id` ,`classes`.`dept_id` FROM students JOIN  classes ON `students`.`class_id` = `classes`.`class_id` WHERE `students`.`roll no` = '$rollno' && `students`.`password` = '$password_hash' ";
+			$query = "SELECT `students`.`roll no` , `students`.`name` ,`students`.`class_id`,`students`.`section` ,`classes`.`dept_id` FROM students JOIN  classes ON `students`.`class_id` = `classes`.`class_id` WHERE `students`.`roll no` = '$rollno' && `students`.`password` = '$password_hash' ";
 			
 			if($query_run = mysql_query($query)){
 				if(mysql_num_rows($query_run)>0){
@@ -18,6 +18,7 @@
 					$_SESSION['rollno'] = $userDetails['roll no'];
 					$_SESSION['dept_id'] = $userDetails['dept_id'];
 					$_SESSION['class_id'] = $userDetails['class_id'];
+					$_SESSION['section'] = $userDetails['section'];
 					header('Location: submit.php');
 				}
 				else{
@@ -28,7 +29,7 @@
 			}
 		}
 		else{
-			$error = "Please input both username and password.";
+			$error = "Please input both Username and password.";
 		}
 	}	
 ?>

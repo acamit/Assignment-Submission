@@ -1,5 +1,6 @@
 <?php
 	require '../include/database.inc.php';
+	session_start();
 	/*for classes*/
 	if(isset($_GET['dept_id'])){
 		$dept_id = $_GET['dept_id'];
@@ -30,8 +31,15 @@
 	if(isset($_GET['class_id'])&&isset($_GET['semester'])){
 		$class_id = $_GET['class_id'];
 		$sem = $_GET['semester'];
-		
-		$query = "SELECT `sub_id` , `subject` FROM subjects WHERE `class_id` = '$class_id' && `semester` = '$sem'";
+		if(isset($_SESSION['t_id']) && !empty($_SESSION['t_id'])){
+			
+			$t_id = $_SESSION['t_id'];
+			$query = "SELECT `sub_id` , `subject` FROM subjects WHERE `class_id` = '$class_id' && `semester` = '$sem' && `teacher_id` = '$t_id'";
+		}
+		else{
+			$query = "SELECT `sub_id` , `subject` FROM subjects WHERE `class_id` = '$class_id' && `semester` = '$sem'";
+		 
+		}
 		@$query_run = mysql_query($query);
 		if($query_run){
 			$count = 0;
@@ -55,14 +63,16 @@
 	
 	
 /*for topics*/
+
 	$count=0;
 	if(isset($_GET['sub_id'])&&isset($_GET['class_id'])){
 		$subject = $_GET['sub_id'];
 		$class = $_GET['class_id'];
+		$section = $_SESSION['section'];
 		$topic_list = "";
 		$topic_id_list = "";
 		if(!empty($subject)&&!empty($class)){
-			 $query = "SELECT `topic` , `topic_id`,`due_date` FROM topics WHERE `sub_id` = '$subject' && `class_id` = '$class'";
+			 $query = "SELECT `topic` , `topic_id`,`due_date` FROM topics WHERE `sub_id` = '$subject' && `class_id` = '$class' && `section` = '$section'";
 			if($query_run = mysql_query($query)){
 				while($topics = mysql_fetch_assoc($query_run)){
 					

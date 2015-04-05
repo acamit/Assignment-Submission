@@ -1,10 +1,18 @@
 <?php
 	require '../include/database.inc.php';
 	require '../include/core.inc.php';
-	include '../include/header.html'; ?>
+ ?>
 <html>
+	<head>
+		<link rel = "stylesheet" type = "text/css" href = "../css/semantic/dist/semantic.min.css"/>
+		<link rel = "stylesheet" type = "text/css" href = "../css/css.css"/>
+	</head>
 	<body>
-		
+		<div class = "header">
+			<h1 class = "ui black header">Department of Computer Science And Engineering</h1>
+			<h2 class ="ui green header">Assignment Submission Portal</h2>
+		</div>
+	
 
 	</body>
 </html>

@@ -7,7 +7,6 @@
 		$date = date('Y-m-d');
 		if(isset($_SESSION['rollno'])&&isset($_SESSION['name'])&& isset($_POST['department'])&&isset($_POST['class'])&&isset($_POST['semester'])&&isset($_POST['subjects'])&&isset($_POST['topic'])&&isset($_FILES['file']['name']) ){
 			
-			
 			$name = $_FILES['file']['name'];
 			$tmp_name = $_FILES['file']['tmp_name'];
 			$type = $_FILES['file']['type'];
@@ -18,19 +17,25 @@
 			$semester = htmlentities($_POST['semester']);
 			$subject = htmlentities($_POST['subjects']);
 			$topic_id = mysql_real_escape_string(htmlentities($_POST['topic']));
+			$section = htmlentities(trim($_SESSION['section']));
 					
 			/*check file type */
-			$query = "select `topic`, `filetype` , `filetype2` from topics where `topic_id` = '$topic_id'";
+			$query = "select `topic`, `filetype` from topics where `topic_id` = '$topic_id'";
 			if($query_run = mysql_query($query)){
 				if(mysql_num_rows($query_run)>0){
 					
-					$required_type1 =  mysql_result($query_run , 0 , 'filetype');
-					$required_type2 =  mysql_result($query_run , 0 , 'filetype2');
+					$required_type =  mysql_result($query_run , 0 , 'filetype');
+					$required_types = explode('/' , $required_type);
 					$topic = mysql_result($query_run , 0 , 'topic');
 					$info = new SplFileInfo($name);
 					$extension = $info->getExtension();
-					
-					if($extension == $required_type1 || $extension == $required_type2){
+					$extension_match =0;
+					foreach($required_types as $type){
+						if($extension == $type){
+							$extension_match =1;
+						}
+					}
+					if($extension_match){
 						$class_query = "SELECT `class` FROM classes WHERE `class_id`= '$class_id'";
 						$dept_query = "SELECT `department` FROM departments WHERE `dept_id`= '$dept_id'";
 						$teacher_query = "SELECT `teacher_id` FROM subjects WHERE `sub_id`= '$subject' AND `class_id` = '$class_id'";
@@ -43,8 +48,15 @@
 							$class = mysql_result($query_run,0,'class');
 							$teacher = mysql_result($teacher_query_run ,0 , 'teacher_id');
 							
-							$location ='../submissions/'.$department.'/'.$class.'/sem '.$semester.'/'.$subject.'/'.$topic.'/';
-					
+							if($section == "0"){
+								
+								$location ='../submissions/'.$department.'/'.$class.'/sem '.$semester.'/'.$subject.'/'.$topic.'/';
+							}
+							else{
+								$sec = 'section '.$section;
+								$location ='../submissions/'.$department.'/'.$class.'/sem '.$semester.'/'.$subject.'/'.$sec.'/'.$topic.'/';
+							}
+							
 								/*check if already submitted*/
 							$query = "SELECT `rollno` from submissions where `topic_id` = '$topic_id' && `rollno` = '$rollno'";
 							if($query_run = mysql_query($query)){
@@ -59,7 +71,7 @@
 									
 									if($query_run = mysql_query($query)){
 									echo 'assignment successfully submitted.';
-									header('Location: student_home.php');
+									header('Location: thanks.php');
 									
 								}
 								else{
@@ -74,9 +86,8 @@
 					}
 					else{
 						
-						echo 'invalid file type. <br/>Required:' . $required_type1 ;
-						if(!empty($required_type2))
-							echo ' OR .'.$required_type2;
+						$error = 'Invalid file type. <br/>Required:' . $required_type;
+						
 					}
 				}
 			}
@@ -95,7 +106,9 @@ else{
 	
 	<head>
 		<link rel = "stylesheet" type = "text/css" href = "../css/semantic/dist/semantic.min.css"/>
+		
 		<link rel = "stylesheet" type = "text/css" href = "../css/css.css"/>
+		
 		<script src= "../js/submission.js" type = "text/javascript"></script>
 	</head>
 	
@@ -188,7 +201,12 @@ else{
 				<option value ="">Select Subject</option>
 				</select>
 			</div>
-			
+			<!-- Temporary Field for section 			
+			<div class = "field">
+				<label for = "subjects">Section :</label>
+				<input type = "text" id = "section" name = "section" value = "<?php// echo $_SESSION['section']?>"/>
+			</div>
+			<!-- Temporary Field for section -->			
 			<div class = "field">
 			Topic : <select id ="topic" name = "topic" required="required">
 				<option value = "">Select Topic</option>			
