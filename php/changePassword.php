@@ -2,7 +2,6 @@
 <?php
 	require '../include/database.inc.php';
 	require '../include/core.inc.php';
-	include '../include/header.html';
 	if(student_login()){
 		$table = "students";
 		$field = "roll no";
@@ -56,8 +55,15 @@
 ?>
 	
 <html>
+	<head>
+		<link rel = "stylesheet" type = "text/css" href = "../css/semantic/dist/semantic.min.css"/>
+		<link rel = "stylesheet" type = "text/css" href = "../css/css.css"/>
+	</head>
 	<body>
-	
+		<div class = "header">
+			<h1 class = "ui black header">Department of Computer Science And Engineering</h1>
+			<h2 class ="ui green header">Assignment Submission Portal</h2>
+		</div>
 	<form id="changePassword" class="changePassword_form ui fluid form segment" action = "changePassword.php" method = "post" >
 	
 		<span id ="teacher_form_error" class = "ui form error" ><?php if(!empty($error)){echo $error;}?></span>
