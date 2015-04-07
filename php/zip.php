@@ -50,7 +50,7 @@ class HZip
     header("Content-Disposition: attachment; filename= '$dirName.zip'");
     header('Content-Length: ' . filesize($zipname));
 	header("Location: ../zip/$dirName.zip");
-	unlink("../zip/$dirName.zip");
+	//unlink("../zip/$dirName.zip");
   }
 }
 

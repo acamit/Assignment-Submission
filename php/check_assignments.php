@@ -104,10 +104,10 @@
 		  </div>
 		  <div class="actions">
 			<div class="ui black button">
-			  Not Now
+			  Close
 			</div>
 			<div class="ui positive right labeled icon button">
-			  Download All
+			  <a href = "" id = "download">Download All</a>
 			  <i class="download icon"></i>
 			</div>
 		  </div>

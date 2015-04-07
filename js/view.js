@@ -15,7 +15,8 @@ function loadfiles(path){
 				
 			}
 		}
-		
+		var node = document.getElementById("download");
+		node.setAttribute("href" , "zip.php?zip="+path);
 		
 		xmlhttp.open('GET' , 'fileList.php?path='+path , true);
 		xmlhttp.send();

@@ -99,8 +99,8 @@
 							$topic_list = $topic_list.$topics['topic'];
 						}
 						else{
-							$topic_id_list = $topic_id_list.'#'.$topics['topic_id'];
-							$topic_list = $topic_list.'^'.$topics['topic'];
+							$topic_id_list = $topic_id_list.'^'.$topics['topic_id'];
+							$topic_list = $topic_list.'#'.$topics['topic'];
 						}
 
 					}
