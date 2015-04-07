@@ -53,6 +53,8 @@
 		if($query_run = mysql_query($query)){
 		
 		while($result = mysql_fetch_assoc($query_run)){
+			
+				//echo $result['file'].'<br/>';
 				$path = explode('/' , $result['file'] );
 				echo '<div class="ui padded grid">
 						<div class="two column row">
@@ -65,10 +67,14 @@
 							<p>'.$path[5].'</p>
 						  </div>
 						</div>
-						<div class="black row">
-						  <div class= "column" onclick = "loadfiles(\''.$result['file'].'\')">
-							<h2 class="ui inverted header"><img src = "../images/folder.png" /></h2>
-							<div>Click to see Assignments Submitted till Now</div>
+						<div class="two column black row">
+						  <div class= "check column" onclick = "loadfiles(\''.$result['file'].'\')">
+							<h2 class="ui inverted header"><img src = "../images/folder.png" /><small>Click to see Assignments Submitted till Now</small></h2>
+							<div></div>
+						  </div>
+						  <div class= "edit column" onclick = "">
+							<h2 class="ui inverted header"><img src = "../images/edit2.png" /><small> Click to Edit The Assignment</small></h2>
+							<div></div>
 						  </div>
 						</div>
 					  </div> <br/><br/>';
@@ -82,7 +88,7 @@
 		header('Location: teacher_login.php');
 	}
 ?>
-		<div class="ui modal">
+		<div class="ui first long modal">
 		  <i class="close icon"></i>
 		  <div class="header">
 			Assignments Submitted till Now
@@ -94,20 +100,76 @@
 			<div class="description">
 			  <div class="ui header"></div>
 			  <div id = "div"></div>
-			  <p>Is it okay to use this photo?</p>
 			</div>
 		  </div>
 		  <div class="actions">
 			<div class="ui black button">
-			  Close
+			  Not Now
 			</div>
-			<div class="ui positive right labeled icon button" >
-			<a href="" id = "download">Download</a>
-			<i class="download icon"></i>
+			<div class="ui positive right labeled icon button">
+			  Download All
+			  <i class="download icon"></i>
 			</div>
 		  </div>
 		</div>
-
+		
+		<div class="ui second small modal">
+			  <i class="close icon"></i>
+			  <div class="header">
+				
+			  </div>
+			  <div class="content">
+				
+				<div class="description">
+				  <div class="ui header">Edit the Fields You want to Change</div>
+				  <div class = "edit form"><form class = "ui form" method = "GET" action = "addNewAssignment.php">
+			
+				<?php if(isset($error) &&!empty($error)){
+						echo '<div class = "error">'.ucwords($error).'</div>';
+				}
+				?>
+				<div class="required field">
+					<label for = "topic">Topic Name</label>
+					<input name = "topic" id = "topic" placeholder="Topic" type="text" required = "required">
+				</div>
+				 
+				
+				<label>Due Date</label>
+				<div class="three fields">
+					
+					<div class = "required field">
+						<input name="month" id = "month" placeholder="mm" type="number" min = "1" max = "12" required = "required">
+					</div>
+					
+					<div class = "required field">
+						<input name="day" id = "day" placeholder="dd" type="number" min = "1" required = "required" >
+					</div>
+					
+					<div class = "field">
+						<input name = "year" id = "year" placeholder="yyyy" type="text" value = "<?php echo date('Y'); ?>" readonly = "readonly"  required = "required">
+					</div>
+				</div>
+				
+				<br/>
+				
+				<button type = "submit" class="ui positive right labeled icon button">
+				  Make Changes
+				  <i class="checkmark icon"></i>
+				</button>
+			  
+			
+				</form></div>
+				 
+				</div>
+			  </div>
+			  <form>
+			  <div class = "actions">
+				<button type = "submit" class="ui red button" name = "Discard_Assignment">
+				  Discard Assignment
+				</button>
+			  </div>
+			  </form>
+			</div>
 		<script type = "text/javascript" src = "../js/view.js"></script>
 	</body>
 </html>
