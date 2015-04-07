@@ -20,9 +20,9 @@
 			  <a class="active item" href="check_assignments.php" >
 				<i class = "download icon"></i> Check Assignments
 			  </a>
-			  <a class="item">
+			  <!--<a class="item">
 				<i class="edit icon"></i> Edit Assignment
-			  </a>
+			  </a>-->
 			  <div class="right menu">
 				<a class="ui item">
 					<i class = "user icon"></i><?php echo $_SESSION['name']; ?> 
@@ -72,10 +72,10 @@
 							<h2 class="ui inverted header"><img src = "../images/folder.png" /><small>Click to see Assignments Submitted till Now</small></h2>
 							<div></div>
 						  </div>
-						  <div class= "edit column" onclick = "">
+						  <!--<div class= "edit column" onclick = "">
 							<h2 class="ui inverted header"><img src = "../images/edit2.png" /><small> Click to Edit The Assignment</small></h2>
 							<div></div>
-						  </div>
+						  </div>-->
 						</div>
 					  </div> <br/><br/>';
 			

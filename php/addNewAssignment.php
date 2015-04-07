@@ -90,9 +90,9 @@
 			  <a class="item" href="check_assignments.php" >
 				<i class = "download icon"></i> Check Assignments
 			  </a>
-			  <a class="item">
+			  <!--<a class="item">
 				<i class="edit icon"></i> Edit Assignment
-			  </a>
+			  </a>-->
 			  <div class="right menu">
 				<a class="ui item">
 					<i class = "user icon"></i><?php echo $_SESSION['name']; ?> 
