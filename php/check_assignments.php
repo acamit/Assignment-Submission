@@ -53,8 +53,6 @@
 		if($query_run = mysql_query($query)){
 		
 		while($result = mysql_fetch_assoc($query_run)){
-			
-				//echo $result['file'].'<br/>';
 				$path = explode('/' , $result['file'] );
 				echo '<div class="ui padded grid">
 						<div class="two column row">
@@ -101,11 +99,11 @@
 		  </div>
 		  <div class="actions">
 			<div class="ui black button">
-			  Not Now
+			  Close
 			</div>
-			<div class="ui positive right labeled icon button">
-			  Download All
-			  <i class="download icon"></i>
+			<div class="ui positive right labeled icon button" >
+			<a href="" id = "download">Download</a>
+			<i class="download icon"></i>
 			</div>
 		  </div>
 		</div>
