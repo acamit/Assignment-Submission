@@ -82,8 +82,14 @@ padding-left:15%;/*15% when 3 ,30% when 2*/
 /* teacher_home page css ends*/
 
 body.check {
-
 font-variant:small-caps;
 }
 
+.ui.first.long.modal{
+width:60%;
+text-align:center;
+}
 
+div.edit.form > form.ui.form{
+	width:800px;
+}
