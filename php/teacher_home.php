@@ -22,9 +22,9 @@
 		  <a class="item" href="check_assignments.php" >
 			<i class = "download icon"></i> Check Assignments
 		  </a>
-		  <a class="item">
+		  <!--<a class="item">
 			<i class="edit icon"></i> Edit Assignment
-		  </a>
+		  </a>-->
 		  <div class="right menu">
 			<a class="ui item">
 				<i class = "user icon"></i><?php echo $_SESSION['name']; ?> 
@@ -58,7 +58,7 @@
 			  </div>
 			</div>
 		  </div>
-		 <div class="card">
+		 <!--<div class="card">
 			<a class="image">
 			  <img src="../images/edit.png">
 			</a>
@@ -71,7 +71,7 @@
 				
 			  </div>
 			</div>
-		  </div>
+		  </div>-->
 		  <div class="card">
 			<a class="image" href="check_assignments.php">
 			  <img src="../images/download.png">
