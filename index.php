@@ -10,9 +10,7 @@
 		<link rel = "stylesheet" type = "text/css" href = "css/semantic/dist/semantic.min.css"/>
 		<link rel = "stylesheet" type = "text/css" href = "css/css.css"/>
 	</head>
-	<body class = "index">
-		
-		<div class = "header">
+	<body class = "index"><div class = "header">
 			<h1 class = "ui black header">Department of Computer Science And Engineering</h1>
 			<h2 class ="ui green header">Assignment Submission Portal</h2>
 		</div>
@@ -20,10 +18,13 @@
 		<div class="teacher">
 			<a href="php/teacher_login.php">
 			
-						<img src = "images/teacher.png" class="teacher_image" name="teacher_image"/>
+						<img  class="teacher_image" name="teacher_image"/>
 						<br/>
-						<div class="ui animated button">
-			   <div class="visible content">Teacher Login </div>
+						<div class="ui animated button design">
+			   <div class="visible content">
+			   	Teacher Login
+			   	
+			    </div>
 			   <div class="hidden content">
 				 <i class="right arrow icon"></i>
 			   </div>
@@ -32,7 +33,7 @@
 		</div>
 		<div class = "student">
 			<a href="php/student_login.php">
-				<img src = "images/student.png" class="stud_image" name="stud_image"/><br/>
+				<img  class="stud_image" name="stud_image"/><br/>
 				<div class="ui animated button">
 				   <div class="visible content">Student Login </div>
 				   <div class="hidden content">
@@ -41,6 +42,7 @@
 				</div>
 			</a>
 		</div>
+		
 		<script type = "text/javascript" src = "js/index.js"></script>
 	</body>
 </html>

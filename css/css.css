@@ -4,7 +4,10 @@
 
 /*index page css*/
 body.index{
-background-color:rgba(0,128,128,0.6);
+/*background-color:rgba(0,128,128,0.6);*/
+background-image: url('../images/book1.jpg');
+background-repeat: no-repeat;
+height:580px;
 
 }
 
@@ -30,24 +33,32 @@ padding-top:20px;
 padding-bottom:40px;
 font-variant:small-caps;
 }
+
+
 div.teacher{
-margin-top:50px;
-margin-left:15%;
+margin-top:270px;
+margin-left:26%;
+
+
 }
 
 div.student{
-margin-top:50px;
+margin-top:270px;
 float:right;
-margin-right:15%;
+margin-right:33%;
 }
 
 div.ui.animated.button {
-height:50px;
-width:150px;
+height:68px;
+width:220px;
 border-radius:0px;
-padding-top:15px;
+padding-top:21px;
 margin-top:10px;
 margin-left:50px;
+font-size: 1.5rem;
+font-weight:100;
+
+
 }
 /*index page css ends*/
 
