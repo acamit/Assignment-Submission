@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Apr 07, 2015 at 08:20 PM
+-- Generation Time: Apr 12, 2015 at 06:18 PM
 -- Server version: 5.6.21
 -- PHP Version: 5.6.3
 
@@ -37,9 +37,9 @@ CREATE TABLE IF NOT EXISTS `classes` (
 --
 
 INSERT INTO `classes` (`class_id`, `class`, `dept_id`) VALUES
-('BA103', 'bachelor of architecture', 103),
 ('BT101', 'B.Tech', 101),
-('BT102', 'B.Tech', 102);
+('BT102', 'B.Tech', 102),
+('MC101', 'M.C.A', 101);
 
 -- --------------------------------------------------------
 
@@ -84,11 +84,18 @@ CREATE TABLE IF NOT EXISTS `students` (
 
 CREATE TABLE IF NOT EXISTS `subjects` (
   `sub_id` varchar(6) NOT NULL,
-  `subject` varchar(30) NOT NULL,
+  `subject` varchar(70) NOT NULL,
   `teacher_id` varchar(5) NOT NULL,
   `class_id` varchar(8) NOT NULL,
   `semester` int(2) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `subjects`
+--
+
+INSERT INTO `subjects` (`sub_id`, `subject`, `teacher_id`, `class_id`, `semester`) VALUES
+('CSL242', 'Microprocessor and assembly language programming', 'jsb', 'BT101', 4);
 
 -- --------------------------------------------------------
 
