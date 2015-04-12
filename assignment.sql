@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Apr 12, 2015 at 07:03 PM
+-- Generation Time: Apr 12, 2015 at 07:28 PM
 -- Server version: 5.6.21
 -- PHP Version: 5.6.3
 
@@ -429,6 +429,13 @@ CREATE TABLE IF NOT EXISTS `submissions` (
   `file` varchar(200) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
+--
+-- Dumping data for table `submissions`
+--
+
+INSERT INTO `submissions` (`id`, `topic_id`, `rollno`, `teacher_id`, `date`, `file`) VALUES
+('2013csa1030e6686b0d58', 'e6686b0d58', '2013csa1030', 'jsb', '2015-04-12', '../submissions/department of computer science and engineering/B.Tech/sem 4/CSL242/section A/practical record/');
+
 -- --------------------------------------------------------
 
 --
@@ -447,7 +454,7 @@ CREATE TABLE IF NOT EXISTS `teachers` (
 --
 
 INSERT INTO `teachers` (`id`, `teacher`, `dept_id`, `password`) VALUES
-('jsb', 'Jaspreet sing baath', '101', 'aed32f5fffcfe750aaecdfca61773909');
+('jsb', 'Jaspreet singh baath', '101', 'aed32f5fffcfe750aaecdfca61773909');
 
 -- --------------------------------------------------------
 
@@ -464,6 +471,13 @@ CREATE TABLE IF NOT EXISTS `topics` (
   `class_id` varchar(8) NOT NULL,
   `section` varchar(1) NOT NULL DEFAULT '0'
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `topics`
+--
+
+INSERT INTO `topics` (`topic_id`, `topic`, `sub_id`, `due_date`, `filetype`, `class_id`, `section`) VALUES
+('e6686b0d58', 'practical record', 'CSL242', '2015-04-22', 'doc/docx/doc/docx', 'BT101', 'A');
 
 --
 -- Indexes for dumped tables
