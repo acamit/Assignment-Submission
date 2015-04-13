@@ -15,7 +15,7 @@
 			 $month = $_GET['month'];
 			 $year = $_GET['year'];
 			 $files = $_GET['files'];
-			
+			 $t_id = $_SESSION['t_id'];			 
 			if(!empty($topic) &&!empty($department) && !empty($class) && !empty($semester) && !empty($subject) && !empty($day) && !empty($month) && !empty($year) && !empty($files)){
 				if(empty($section)){
 					$section = "0";
@@ -45,6 +45,7 @@
 					
 					$sec = 'section '.$section;
 					 $path = '../submissions/'.$dept.'/'.$class_name.'/'.$semester.'/'.$subject.'/'.$sec.'/'.$topic;
+					 
 				}
 				else{
 				 $path = '../submissions/'.$dept.'/'.$class_name.'/'.$semester.'/'.$subject.'/'.$topic;
@@ -54,7 +55,7 @@
 				
 				$date = $year.'-'.$month.'-'.$day;
 				
-				$query = "INSERT INTO topics VALUES('$topic_id', '$topic' , '$subject' , '$date' , '$filetypes', '$class' , '$section')";
+				$query = "INSERT INTO topics VALUES('$topic_id', '$topic' , '$subject' , '$date' , '$filetypes', '$class' , '$section' , '$t_id' , '$path')";
 				if($query_run = mysql_query($query)){
 					if(mkdir($path)){
 						header('Location: thanks.php');

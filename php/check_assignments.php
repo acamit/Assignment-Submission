@@ -48,14 +48,15 @@
 		
 		$id = $_SESSION['t_id'];
 	
-		$query = "SELECT DISTINCT `file` FROM `submissions` WHERE `teacher_id` = '$id'";
+		$query = "SELECT DISTINCT `topic_id` , `topic` , `due_date` , `file` FROM `topics` WHERE `teacher_id` = '$id'";
 		
 		if($query_run = mysql_query($query)){
 		
 		while($result = mysql_fetch_assoc($query_run)){
 			
-				//echo $result['file'].'<br/>';
+				$result['file'].'<br/>';
 				$path = explode('/' , $result['file'] );
+				$path_length = count($path);
 				echo '<div class="ui padded grid">
 						<div class="two column row">
 						  <div class="white column">
@@ -63,7 +64,7 @@
 							<p>'.$path[3].' '.$path[4].'</p>
 						  </div>
 						  <div class="teal column">
-							<h2 class="ui inverted header">'.$path[6].'</h2>
+							<h2 class="ui inverted header">'.$path[$path_length-1].'</h2>
 							<p>'.$path[5].'</p>
 						  </div>
 						</div>
@@ -72,10 +73,10 @@
 							<h2 class="ui inverted header"><img src = "../images/folder.png" /><small>Click to see Assignments Submitted till Now</small></h2>
 							<div></div>
 						  </div>
-						  <!--<div class= "edit column" onclick = "">
+						  <div class= "edit column" onclick = "loaddata(\''.$result['topic_id'].'\' ,\''.$result['file'].'\' ,\''.$result['topic'].'\' , \''.$result['due_date'].'\')">
 							<h2 class="ui inverted header"><img src = "../images/edit2.png" /><small> Click to Edit The Assignment</small></h2>
 							<div></div>
-						  </div>-->
+						  </div>
 						</div>
 					  </div> <br/><br/>';
 			
@@ -84,6 +85,8 @@
 		}else{
 			echo 'query_not_run';
 		}
+		
+		
 	}else{
 		header('Location: teacher_login.php');
 	}
@@ -122,7 +125,8 @@
 				
 				<div class="description">
 				  <div class="ui header">Edit the Fields You want to Change</div>
-				  <div class = "edit form"><form class = "ui form" method = "GET" action = "addNewAssignment.php">
+				  <div class = "edit form">
+				  <form class = "ui form" method = "POST" action = "edit.php">
 			
 				<?php if(isset($error) &&!empty($error)){
 						echo '<div class = "error">'.ucwords($error).'</div>';
@@ -132,7 +136,8 @@
 					<label for = "topic">Topic Name</label>
 					<input name = "topic" id = "topic" placeholder="Topic" type="text" required = "required">
 				</div>
-				 
+					<input name = "path" id = "path"  type="hidden" required = "required">
+				<input name = "id" id = "id"  type="hidden" required = "required">
 				
 				<label>Due Date</label>
 				<div class="three fields">
@@ -156,13 +161,13 @@
 				  Make Changes
 				  <i class="checkmark icon"></i>
 				</button>
-			  
-			
 				</form></div>
 				 
 				</div>
 			  </div>
-			  <form>
+			  <form action = "edit.php" method = "Post">
+			  <input name = "discard_path" id = "discard_path"  type="hidden" required = "required">
+			  <input name = "discard_id" id = "discard_id"  type="hidden" required = "required">
 			  <div class = "actions">
 				<button type = "submit" class="ui red button" name = "Discard_Assignment">
 				  Discard Assignment

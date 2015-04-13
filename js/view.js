@@ -1,7 +1,3 @@
-
-window.addEventListener('load' , function(){
-});
-	
 function loadfiles(path){
 		if(window.XMLHttpRequest){
 			xmlhttp = new XMLHttpRequest();
@@ -21,6 +17,19 @@ function loadfiles(path){
 		xmlhttp.open('GET' , 'fileList.php?path='+path , true);
 		xmlhttp.send();
 	}
+	
+	function loaddata( id, path , name , date){
+			$('#path').val(path);
+			$('#id').val(id);
+			$('#discard_path').val(path);
+			$('#discard_id').val(id);
+			$('#topic').val(name);
+			date = date.split("-");
+			$('#year').val(date[0]);
+			$('#month').val(date[1]);
+			$('#day').val(date[2]);
+	}
+	
 	$(document).ready(function(){
 
 		$(".check.column").click(function() {
@@ -30,8 +39,9 @@ function loadfiles(path){
 		});
 		
 		$(".edit.column").click(function() {
+			
+			
 			$('.second.modal')	
-			.modal('show')
-			;
+			.modal('show');
 		});
 	});

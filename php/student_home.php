@@ -23,7 +23,7 @@
 		  </a>-->
 		  <div class="right menu">
 			<a class="ui item">
-				<i class = "user icon"></i><?php echo 'Name of Student'; ?> 
+				<i class = "user icon"></i><?php echo $_SESSION['name']; ?> 
 			</a>
 			<a class="ui item" href="changePassword.php">
 				<i class = "server icon"></i>Change Password
