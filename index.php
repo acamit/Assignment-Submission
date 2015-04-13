@@ -21,18 +21,16 @@
 			<a href="php/teacher_login.php">
 						<div class="ui animated button design">
 						   <div class="visible content">
-							Teacher Login
-							
+							Teacher Login							
 							</div>
 						   <div class="hidden content">
 								<i class="right arrow icon"></i>
 							</div>
-			</div>
-				</a>
+						</div>
+			</a>
 		</div>
 		<div class = "student">
 			<a href="php/student_login.php">
-			
 				<div class="ui animated button">
 				   <div class="visible content">Student Login </div>
 				   <div class="hidden content">

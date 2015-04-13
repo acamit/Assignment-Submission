@@ -62,7 +62,7 @@
 			
 			<div class="required field">
 			  <label>Password:</label>
-				<input placeholder="Password"  name="password" type="password" required="required">
+				<input id = "teacher_password" placeholder="Password"  name="password" type="password" required="required">
 			</div>
 			 <input type ="submit" class="ui submit button" value="LOG IN" />
   </form>

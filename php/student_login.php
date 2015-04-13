@@ -19,7 +19,7 @@
 					$_SESSION['dept_id'] = $userDetails['dept_id'];
 					$_SESSION['class_id'] = $userDetails['class_id'];
 					$_SESSION['section'] = $userDetails['section'];
-					header('Location: submit.php');
+					header('Location: student_home.php');
 				}
 				else{
 					 $error = "Invalid Username and password";
@@ -51,14 +51,14 @@
 		<span id ="student_form_error" ><?php if(!empty($error)){echo $error;}?>
 			<div class="required field">
 			  <label>Roll No:</label>
-				<input placeholder="Roll Number" type="text" name="rollno" 
+				<input id ="roll_no" placeholder="Roll Number" type="text" name="rollno" 
 					  pattern= "\d\d\d\d\w\w\w\d\d\d\d" title = "Eg: 2013CSA1020"
 					  maxlength = "11" required="required">
 			</div>
 			
 			<div class="required field">
 			  <label>Password:</label>
-				<input placeholder="Password"  name="password" type="password" required="required">
+				<input id = "student_password" placeholder="Password"  name="password" type="password" required="required">
 			</div>
 			 <input type ="submit" class="ui submit button" value="LOG IN" />
   </form>

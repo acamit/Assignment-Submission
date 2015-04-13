@@ -13,8 +13,8 @@
 	<body>
 		<br/>
 		<div class="ui secondary pointing  menu">
-		  <a class="active item">
-			<i class="home icon" href="teacher_home.php"></i> Home
+		  <a class="active item" href="teacher_home.php">
+			<i class="home icon" ></i> Home
 		  </a>
 		  <a class="item" href = "addNewAssignment.php">
 			<i class="upload icon"></i> Upload New Assignment
