@@ -32,22 +32,22 @@ if(isset($_POST['path']) && isset($_POST['id']) && isset($_POST['topic']) && iss
 			$id = $_POST['discard_id'];
 			$path = $_POST['discard_path'];
 			$query = "delete from topics where `topic_id` = '$id'";
-				if($query_run = mysql_query($query)){
+			$query1 = "delete from submissions where `topic_id` = '$id'";
+				if($query_run = mysql_query($query) && $query_run1 = mysql_query($query1){
 					/*delete the folder*/
 					if(Delete($path)){
 						header('Location: check_assignments.php');
 					}
 					else{
-						echo 'couldnot delete the folder';
+						echo 'Could not delete the folder. Please contact admin.';
 					}
 					
 				}else{
 				 echo 'cannot discard the assignment. please contact the admin.';
 				}
 			
-		}else{
-			echo 'not set';
 		}
+		
 		
 		function Delete($path)
 {

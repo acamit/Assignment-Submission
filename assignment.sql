@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Apr 13, 2015 at 09:39 PM
+-- Generation Time: Apr 16, 2015 at 02:01 PM
 -- Server version: 5.6.21
 -- PHP Version: 5.6.3
 
@@ -425,8 +425,7 @@ CREATE TABLE IF NOT EXISTS `submissions` (
   `topic_id` varchar(10) NOT NULL,
   `rollno` varchar(11) NOT NULL,
   `teacher_id` varchar(5) NOT NULL,
-  `date` date NOT NULL,
-  `file` varchar(200) NOT NULL
+  `date` date NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------

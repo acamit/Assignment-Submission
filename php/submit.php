@@ -67,7 +67,7 @@
 								else{
 									$sid = $rollno.$topic_id;
 									if(move_uploaded_file($tmp_name , $location.$rollno.'.'.$extension)){
-									$query = "INSERT INTO submissions(`id` , `topic_id` , `rollno` , `date` , `file`, `teacher_id`) values('$sid' , '$topic_id' , '$rollno' , '$date' , '$location' , '$teacher' )"; 
+									$query = "INSERT INTO submissions(`id` , `topic_id` , `rollno` , `date` , `teacher_id`) values('$sid' , '$topic_id' , '$rollno' , '$date' , '$teacher' )"; 
 									
 									if($query_run = mysql_query($query)){
 									echo 'assignment successfully submitted.';
@@ -160,10 +160,15 @@ else{
 			<?php
 				if(isset($_SESSION['dept_id'])){
 					$dept_id_s = $_SESSION['dept_id'];
+					
 					$query = "SELECT `department` FROM departments WHERE `dept_id` = '$dept_id_s'";
+					
 						if($query_run = mysql_query($query)){
+							
 							while($dept_s = mysql_fetch_assoc($query_run)){
+								
 								echo '<option value="'.$dept_id_s.'">'.$dept_s['department'].'</option>';
+								
 							}
 						}
 				}
@@ -172,7 +177,9 @@ else{
 					echo '<option value="">Select Department</option>';
 					$query = "SELECT `department` , `dept_id` FROM departments WHERE 1";
 				if($query_run = mysql_query($query)){
+					
 					while($dept = mysql_fetch_assoc($query_run)){
+						
 						echo '<option value="'.$dept['dept_id'].'">'.$dept['department'].'</option>';
 				}
 				
