@@ -38,7 +38,6 @@ class HZip
   {
     $pathInfo = pathInfo($sourcePath);
    $parentPath = $pathInfo['dirname'];
-   //echo '<br/>';
      $dirName = $pathInfo['basename'];
 
     $z = new ZipArchive();
@@ -50,7 +49,6 @@ class HZip
     header("Content-Disposition: attachment; filename= '$dirName.zip'");
     header('Content-Length: ' . filesize($zipname));
 	header("Location: ../zip/$dirName.zip");
-	//unlink("../zip/$dirName.zip");
   }
 }
 

@@ -33,7 +33,7 @@ if(isset($_POST['path']) && isset($_POST['id']) && isset($_POST['topic']) && iss
 			$path = $_POST['discard_path'];
 			$query = "delete from topics where `topic_id` = '$id'";
 			$query1 = "delete from submissions where `topic_id` = '$id'";
-				if($query_run = mysql_query($query) && $query_run1 = mysql_query($query1){
+				if($query_run = mysql_query($query) && $query_run1 = mysql_query($query1)){
 					/*delete the folder*/
 					if(Delete($path)){
 						header('Location: check_assignments.php');

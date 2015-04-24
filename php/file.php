@@ -27,6 +27,7 @@ if(teacher_login() ){
 				break;
 			case 'xls' : $mime = 'application/vnd.ms-excel';
 				break;
+				default : $mime = 'text/plain';
 		}
 
 		header('Content-Type:'.$mime);
