@@ -1,0 +1,4 @@
+[23-Apr-2015 11:02:16 America/Denver] PHP Warning:  mysql_connect(): Access denied for user 'tssgndu_asg'@'192.163.240.195' (using password: YES) in /home/tssgndu/public_html/asg/include/database.inc.php on line 11
+[23-Apr-2015 11:04:00 America/Denver] PHP Warning:  mysql_connect(): Access denied for user 'tssgndu_asg'@'192.163.240.195' (using password: YES) in /home/tssgndu/public_html/asg/include/database.inc.php on line 11
+[23-Apr-2015 11:11:25 America/Denver] PHP Warning:  mysql_connect(): Access denied for user 'tssgndu_asg'@'192.163.240.195' (using password: YES) in /home/tssgndu/public_html/asg/include/database.inc.php on line 11
+[24-Apr-2015 01:20:05 America/Denver] PHP Warning:  mysql_connect(): Access denied for user 'tssgndu_asg'@'192.163.240.195' (using password: YES) in /home/tssgndu/public_html/asg/include/database.inc.php on line 11

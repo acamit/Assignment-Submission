@@ -1,0 +1,142 @@
+
+
+/***********************************************************************************************/
+
+/*index page css*/
+body.index{
+/*background-color:rgba(0,128,128,0.6);*/
+background-image: url('../images/book1.jpg');
+background-repeat: no-repeat;
+height:580px;
+
+}
+
+.teacher , .student{
+	display:inline-block;
+}
+
+.index > div.header {
+background-color:rgba(255,255,255,0.8);
+margin-top:50px;;
+
+}
+
+.header > h1.ui.header {
+text-align:center;
+padding-top:50px;
+font-variant:small-caps;
+}
+
+.header > h2.ui.header {
+text-align:center;
+padding-top:20px;
+padding-bottom:40px;
+font-variant:small-caps;
+}
+
+
+div.teacher{
+margin-top:270px;
+margin-left:26%;
+}
+
+div.student{
+margin-top:270px;
+}
+
+div.ui.animated.button {
+height:68px;
+width:220px;
+border-radius:0px;
+padding-top:21px;
+margin-top:10px;
+margin-left:60px;
+font-size: 1.5rem;
+font-weight:100;
+
+
+}
+
+
+@media (max-width:900px){
+div.teacher{
+margin-top:220px;
+margin-left:0%;
+width:50%;
+}
+div.student{
+margin-top:0px;
+width:0%;
+}
+}
+@media (max-width:600px){
+div.teacher{
+margin-top:220px;
+margin-left:30%;
+width:50%;
+}
+div.student{
+margin-top:0px;
+margin-left:30%;
+width:50%;
+}
+div.ui.animated.button{
+margin-left:0px;
+}
+}
+
+@media (max-width:400px){
+
+div.teacher{
+margin-top:150px;
+margin-left:20%;
+}
+
+div.student{
+margin-left:20%;
+}
+}
+/*index page css ends*/
+
+/***********************************************************************************************/
+
+/*student_login page css*/
+	.ui.form{
+	width : 35%;
+	margin-left: auto;
+	margin-right: auto;}
+/*student_login page css ends*/
+
+/***********************************************************************************************/
+
+/*submission page css*/
+form#submit{
+width:50%;
+margin-left:auto;
+margin-right:auto;
+}
+/*submission page css ends*/
+
+/***********************************************************************************************/
+
+/* teacher_home page css */
+
+body > div#content{
+padding-left:30%;/*15% when 3 ,30% when 2*/ 
+
+}
+
+/* teacher_home page css ends*/
+
+body.check {
+font-variant:small-caps;
+}
+
+.ui.first.long.modal{
+width:60%;
+text-align:center;
+}
+
+div.edit.form > form.ui.form{
+	width:800px;
+}
